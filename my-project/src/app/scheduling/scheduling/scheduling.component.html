@@ -1,0 +1,21 @@
+<br>
+{{scheduleForm.value|json}}
+<form [formGroup]="scheduleForm" *ngIf="flag">
+    <table class="table table-bordered">
+        <thead>
+            <tr class="table-light">
+                <th scope="col" *ngFor="let day of daysList">{{day}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td *ngFor="let day of schedule.controls; index as i" formArrayName="schedule">
+                    <select id="selectDay" name="selectDay" [formControlName]="i" [ngClass]="{ 'selected-day': day.value>0}">
+                        <option *ngFor="let v of getVoluteersByDay(i)" [value]="v.id">{{v.firstName}}{{" "+v.lastName}}</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-dark" (click)="submitScheduling()">Save</button>
+</form>

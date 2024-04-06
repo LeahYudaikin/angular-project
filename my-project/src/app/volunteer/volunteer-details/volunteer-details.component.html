@@ -1,0 +1,60 @@
+<br>
+{{volunteerForm.value|json}}
+<div class="card" *ngIf="flag">
+    <div class="card-header">
+        <b>volunteer {{volunteer?.id}}</b>
+        <br>
+    </div>
+    <div class="card-body">
+        <form [formGroup]="volunteerForm">
+            <div class="form-group">
+                <label for="firstName">firstName: </label>
+                <input id="firstName" class="form-control" type="text" formControlName="firstName" name="firstName">
+                <ng-container
+                    *ngIf="volunteerForm.controls['firstName'].errors && volunteerForm.controls['firstName'].touched">
+                    <div class="alert alert-danger" *ngIf="volunteerForm.controls['firstName'].errors['required']">
+                        This field is required
+                    </div>
+                    <div class="alert alert-danger" *ngIf="volunteerForm.controls['firstName'].errors['minlength']">
+                        must be at least 2 chars
+                    </div>
+                </ng-container>
+            </div>
+            <div class="form-group">
+                <label for="lastName">lastName: </label>
+                <input id="lastName" class="form-control" type="text" formControlName="lastName" name="lastName">
+                <ng-container
+                    *ngIf="volunteerForm.controls['lastName'].errors && volunteerForm.controls['lastName'].touched">
+                    <div class="alert alert-danger" *ngIf="volunteerForm.controls['lastName'].errors['required']">
+                        This field is required
+                    </div>
+                    <div class="alert alert-danger" *ngIf="volunteerForm.controls['lastName'].errors['minlength']">
+                        must be at least 2 chars
+                    </div>
+                </ng-container>
+            </div>
+            <div class="form-group">
+                <label for="phone">phone: </label>
+                <input id="phone" class="form-control" type="tel" formControlName="phone" name="phone">
+                <ng-container *ngIf="volunteerForm.controls['phone'].errors && volunteerForm.controls['phone'].touched">
+                    <div class="alert alert-danger" *ngIf="volunteerForm.controls['phone'].errors['minlength']">
+                        must be at least 10 chars
+                    </div>
+                    <div class="alert alert-danger" *ngIf="volunteerForm.controls['phone'].errors['maxlength']">
+                        phone: 000-0000000
+                    </div>
+                </ng-container>
+            </div>
+            <div class="form-group">
+                <label for="days">days: </label>
+                <br>
+                <ul formArrayName="days">
+                    <li *ngFor="let day of days.controls; index as i">
+                        <input id="volunteerdays" type="checkbox" [formControlName]="i">{{daysList[i]}}
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+    <button class="btn btn-danger" (click)="submitVolunteer()" [disabled]="!volunteerForm.valid">Save</button>
+</div>
