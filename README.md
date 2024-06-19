@@ -71,4 +71,4 @@ The application consists of several components and services to facilitate volunt
 ![image](https://github.com/LeahYudaikin/angular-project/assets/151682731/c0efeeb0-d84c-4a51-b08f-1e4c5e0298d7)
 
 ### Scheduling Page:
-![image](https://github.com/LeahYudaikin/angular-project/assets/151682731/991a5413-048e-4cc5-a6ff-e502282a2710)
+![image](https://github.com/LeahYudaikin/angular-project/assets/151682731/a120133f-2087-438d-bee3-6d6f2471035f)
