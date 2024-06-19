@@ -57,4 +57,18 @@ The application consists of several components and services to facilitate volunt
 
 1. **Clone Repository**: `git clone https://github.com/LeahYudaikin/angular-project.git`
 2. **Install Dependencies**: `npm install`
-3. **Run Development Server**: `ng serve`
+3. **Run Development Server**: `cd server` `dotnet watch`
+4. **Run Projct**: `cd my-project` `npm start`
+5. enter http://localhost:4200/
+
+
+## User Interface:
+
+### Volunteers Page:
+![image](https://github.com/LeahYudaikin/angular-project/assets/151682731/7da507bf-b73f-4915-812e-4648f8ac75c4)
+
+### Volunteer Editing Page:
+![image](https://github.com/LeahYudaikin/angular-project/assets/151682731/c0efeeb0-d84c-4a51-b08f-1e4c5e0298d7)
+
+### Scheduling Page:
+![image](https://github.com/LeahYudaikin/angular-project/assets/151682731/991a5413-048e-4cc5-a6ff-e502282a2710)
